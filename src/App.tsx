@@ -25,6 +25,7 @@ import { PdfMergeView } from './tools/pdf/merge/PdfMergeView';
 import { PdfSplitView } from './tools/pdf/split/PdfSplitView';
 import { ImageToPdfView } from './tools/pdf/image-to-pdf/ImageToPdfView';
 import { PdfToImageView } from './tools/pdf/to-image/PdfToImageView';
+import { PhotoEditorView } from './tools/image/editor/PhotoEditorView';
 
 // Home Dashboard View with All 6 Category Tabs
 function HomeDashboard() {
@@ -259,6 +260,20 @@ export default function App() {
       category="pdf"
     >
       <PdfToImageView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/photo-editor"
+  element={
+    <ToolLayout
+      title="Photo Studio Editor"
+      description="Enhance lighting, fine-tune colors, rotate, flip, and export high-resolution photos directly in your browser."
+      category="image"
+      badge="New"
+    >
+      <PhotoEditorView />
     </ToolLayout>
   }
 />
