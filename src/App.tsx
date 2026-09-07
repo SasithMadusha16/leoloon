@@ -26,6 +26,7 @@ import { PdfSplitView } from './tools/pdf/split/PdfSplitView';
 import { ImageToPdfView } from './tools/pdf/image-to-pdf/ImageToPdfView';
 import { PdfToImageView } from './tools/pdf/to-image/PdfToImageView';
 import { PhotoEditorView } from './tools/image/editor/PhotoEditorView';
+import { PdfRotateView } from './tools/pdf/rotate/PdfRotateView';
 
 // Home Dashboard View with All 6 Category Tabs
 function HomeDashboard() {
@@ -274,6 +275,19 @@ export default function App() {
       badge="New"
     >
       <PhotoEditorView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/pdf-rotate"
+  element={
+    <ToolLayout
+      title="Rotate PDF"
+      description="Rotate specific pages or entire PDF documents clockwise or counter-clockwise permanently."
+      category="pdf"
+    >
+      <PdfRotateView />
     </ToolLayout>
   }
 />
