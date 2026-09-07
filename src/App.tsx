@@ -22,6 +22,9 @@ import { ToolLayout } from './components/layout/ToolLayout';
 import { CompressorView } from './tools/image/compressor/CompressorView';
 import { ConverterView } from './tools/image/converter/ConverterView';
 import { PdfMergeView } from './tools/pdf/merge/PdfMergeView';
+import { PdfSplitView } from './tools/pdf/split/PdfSplitView';
+import { ImageToPdfView } from './tools/pdf/image-to-pdf/ImageToPdfView';
+import { PdfToImageView } from './tools/pdf/to-image/PdfToImageView';
 
 // Home Dashboard View with All 6 Category Tabs
 function HomeDashboard() {
@@ -218,6 +221,48 @@ export default function App() {
     </ToolLayout>
   }
 />
+
+<Route
+  path="/tools/pdf-split"
+  element={
+    <ToolLayout
+      title="PDF Splitter"
+      description="Extract specific pages or custom page ranges from any PDF document locally in your browser."
+      category="pdf"
+      badge="Fast"
+    >
+      <PdfSplitView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/image-to-pdf"
+  element={
+    <ToolLayout
+      title="Images to PDF"
+      description="Combine photos, scans, and graphic files into a single print-ready PDF document."
+      category="pdf"
+      badge="Popular"
+    >
+      <ImageToPdfView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/pdf-to-image"
+  element={
+    <ToolLayout
+      title="PDF to JPG/PNG"
+      description="Extract and convert PDF pages into high-resolution images locally in your browser."
+      category="pdf"
+    >
+      <PdfToImageView />
+    </ToolLayout>
+  }
+/>
+
     </Routes>
     
   );
