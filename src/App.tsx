@@ -27,6 +27,9 @@ import { ImageToPdfView } from './tools/pdf/image-to-pdf/ImageToPdfView';
 import { PdfToImageView } from './tools/pdf/to-image/PdfToImageView';
 import { PhotoEditorView } from './tools/image/editor/PhotoEditorView';
 import { PdfRotateView } from './tools/pdf/rotate/PdfRotateView';
+import { PdfOrganizeView } from './tools/pdf/organize/PdfOrganizeView';
+import { PdfWatermarkView } from './tools/pdf/watermark/PdfWatermarkView';
+import { BgRemoverView } from './tools/image/bg-remover/BgRemoverView';
 
 // Home Dashboard View with All 6 Category Tabs
 function HomeDashboard() {
@@ -288,6 +291,86 @@ export default function App() {
       category="pdf"
     >
       <PdfRotateView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/pdf-organize"
+  element={
+    <ToolLayout
+      title="Organize PDF"
+      description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
+      category="pdf"
+      badge="New"
+    >
+      <PdfOrganizeView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/organize-pdf"
+  element={
+    <ToolLayout
+      title="Organize PDF"
+      description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
+      category="pdf"
+      badge="New"
+    >
+      <PdfOrganizeView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/pdf-watermark"
+  element={
+    <ToolLayout
+      title="PDF Watermark Studio"
+      description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
+      category="pdf"
+      badge="New"
+    >
+      <PdfWatermarkView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/watermark-pdf"
+  element={
+    <ToolLayout
+      title="PDF Watermark Studio"
+      description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
+      category="pdf"
+      badge="New"
+    >
+      <PdfWatermarkView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/bg-remover"
+  element={
+    <ToolLayout
+      title="Background Remover"
+      description="Erase photo backgrounds with automatic color detection, edge smoothing, and instant transparent PNG export."
+      category="image"
+      badge="New"
+    >
+      <BgRemoverView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/remove-bg"
+  element={
+    <ToolLayout
+      title="Background Remover"
+      description="Erase photo backgrounds with automatic color detection, edge smoothing, and instant transparent PNG export."
+      category="image"
+      badge="New"
+    >
+      <BgRemoverView />
     </ToolLayout>
   }
 />
