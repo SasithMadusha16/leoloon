@@ -30,6 +30,11 @@ import { PdfRotateView } from './tools/pdf/rotate/PdfRotateView';
 import { PdfOrganizeView } from './tools/pdf/organize/PdfOrganizeView';
 import { PdfWatermarkView } from './tools/pdf/watermark/PdfWatermarkView';
 import { BgRemoverView } from './tools/image/bg-remover/BgRemoverView';
+import { PdfProtectView } from './tools/pdf/protect/PdfProtectView';
+import { SocialResizerView } from './tools/image/social-resizer/SocialResizerView';
+import { ImageCensorView } from './tools/image/censor/ImageCensorView';
+import { PaletteExtractorView } from './tools/image/palette-extractor/PaletteExtractorView';
+import { ExifStripperView } from './tools/image/exif-stripper/ExifStripperView';
 
 // Home Dashboard View with All 6 Category Tabs
 function HomeDashboard() {
@@ -371,6 +376,141 @@ export default function App() {
       badge="New"
     >
       <BgRemoverView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/pdf-protect"
+  element={
+    <ToolLayout
+      title="Protect PDF"
+      description="Encrypt PDF documents with passwords and customize printing and copying permissions."
+      category="pdf"
+      badge="New"
+    >
+      <PdfProtectView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/protect-pdf"
+  element={
+    <ToolLayout
+      title="Protect PDF"
+      description="Encrypt PDF documents with passwords and customize printing and copying permissions."
+      category="pdf"
+      badge="New"
+    >
+      <PdfProtectView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/social-resizer"
+  element={
+    <ToolLayout
+      title="Social Media Resizer"
+      description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
+      category="image"
+      badge="New"
+    >
+      <SocialResizerView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/image-resizer"
+  element={
+    <ToolLayout
+      title="Social Media Resizer"
+      description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
+      category="image"
+      badge="New"
+    >
+      <SocialResizerView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/image-censor"
+  element={
+    <ToolLayout
+      title="Image Censor & Privacy Redactor"
+      description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
+      category="image"
+      badge="New"
+    >
+      <ImageCensorView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/censor-image"
+  element={
+    <ToolLayout
+      title="Image Censor & Privacy Redactor"
+      description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
+      category="image"
+      badge="New"
+    >
+      <ImageCensorView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/palette-extractor"
+  element={
+    <ToolLayout
+      title="Color Palette Extractor"
+      description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
+      category="image"
+      badge="New"
+    >
+      <PaletteExtractorView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/color-palette"
+  element={
+    <ToolLayout
+      title="Color Palette Extractor"
+      description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
+      category="image"
+      badge="New"
+    >
+      <PaletteExtractorView />
+    </ToolLayout>
+  }
+/>
+
+<Route
+  path="/tools/exif-stripper"
+  element={
+    <ToolLayout
+      title="EXIF & Metadata Stripper"
+      description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
+      category="image"
+      badge="New"
+    >
+      <ExifStripperView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/remove-exif"
+  element={
+    <ToolLayout
+      title="EXIF & Metadata Stripper"
+      description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
+      category="image"
+      badge="New"
+    >
+      <ExifStripperView />
     </ToolLayout>
   }
 />
