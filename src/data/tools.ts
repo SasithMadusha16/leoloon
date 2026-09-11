@@ -14,9 +14,7 @@ export interface Tool {
 }
 
 export const TOOLS_DATA: Tool[] = [
-  // ==========================================
-  // 1. PDF POWER SUITE (8 Tools)
-  // ==========================================
+ 
   {
     id: 'pdf-merge',
     name: 'PDF Merge',

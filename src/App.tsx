@@ -35,6 +35,10 @@ import { SocialResizerView } from './tools/image/social-resizer/SocialResizerVie
 import { ImageCensorView } from './tools/image/censor/ImageCensorView';
 import { PaletteExtractorView } from './tools/image/palette-extractor/PaletteExtractorView';
 import { ExifStripperView } from './tools/image/exif-stripper/ExifStripperView';
+import { VideoTrimmerView } from './tools/video/trimmer/VideoTrimmerView';
+import { VideoCompressorView } from './tools/video/compressor/VideoCompressorView';
+import { VideoToMp3View } from './tools/video/to-mp3/VideoToMp3View';
+import { VideoToGifView } from './tools/video/to-gif/VideoToGifView';
 
 // Home Dashboard View with All 6 Category Tabs
 function HomeDashboard() {
@@ -82,7 +86,7 @@ function HomeDashboard() {
           </h1>
 
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mx-auto mb-8">
-            Process images, edit PDFs, trim videos, clean audio, and run developer tools entirely inside your browser. No cloud uploads. Instant execution.
+            Process images, edit PDFs, clean metadata, and run developer tools entirely inside your browser. No cloud uploads. Instant execution.
           </p>
 
           {/* SEARCH BAR */}
@@ -92,7 +96,7 @@ function HomeDashboard() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search 32+ utilities (e.g. compress, trim, pdf, qr)..."
+              placeholder="Search utilities (e.g. compress, pdf, censor, palette)..."
               className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500 transition-all shadow-sm"
             />
           </div>
@@ -181,6 +185,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomeDashboard />} />
+      
+      {/* IMAGE TOOLS */}
       <Route
         path="/tools/image-compressor"
         element={
@@ -207,315 +213,408 @@ export default function App() {
         }
       />
       <Route
+        path="/tools/photo-editor"
+        element={
+          <ToolLayout
+            title="Photo Studio Editor"
+            description="Enhance lighting, fine-tune colors, rotate, flip, and export high-resolution photos directly in your browser."
+            category="image"
+            badge="New"
+          >
+            <PhotoEditorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/bg-remover"
+        element={
+          <ToolLayout
+            title="Background Remover"
+            description="Erase photo backgrounds with neural AI segmentation, edge smoothing, and instant transparent PNG export."
+            category="image"
+            badge="New"
+          >
+            <BgRemoverView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/remove-bg"
+        element={
+          <ToolLayout
+            title="Background Remover"
+            description="Erase photo backgrounds with neural AI segmentation, edge smoothing, and instant transparent PNG export."
+            category="image"
+            badge="New"
+          >
+            <BgRemoverView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/social-resizer"
+        element={
+          <ToolLayout
+            title="Social Media Resizer"
+            description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
+            category="image"
+            badge="New"
+          >
+            <SocialResizerView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/image-resizer"
+        element={
+          <ToolLayout
+            title="Social Media Resizer"
+            description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
+            category="image"
+            badge="New"
+          >
+            <SocialResizerView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/image-censor"
+        element={
+          <ToolLayout
+            title="Image Censor & Privacy Redactor"
+            description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
+            category="image"
+            badge="New"
+          >
+            <ImageCensorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/censor-image"
+        element={
+          <ToolLayout
+            title="Image Censor & Privacy Redactor"
+            description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
+            category="image"
+            badge="New"
+          >
+            <ImageCensorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/palette-extractor"
+        element={
+          <ToolLayout
+            title="Color Palette Extractor"
+            description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
+            category="image"
+            badge="New"
+          >
+            <PaletteExtractorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/color-palette"
+        element={
+          <ToolLayout
+            title="Color Palette Extractor"
+            description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
+            category="image"
+            badge="New"
+          >
+            <PaletteExtractorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/exif-stripper"
+        element={
+          <ToolLayout
+            title="EXIF & Metadata Stripper"
+            description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
+            category="image"
+            badge="New"
+          >
+            <ExifStripperView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/remove-exif"
+        element={
+          <ToolLayout
+            title="EXIF & Metadata Stripper"
+            description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
+            category="image"
+            badge="New"
+          >
+            <ExifStripperView />
+          </ToolLayout>
+        }
+      />
+
+      {/* PDF TOOLS */}
+      <Route
         path="/tools/pdf-merge"
         element={
           <ToolLayout
-            title="PDF Merger"
-            description="Combine multiple PDF files into a single document with ease."
+            title="PDF Merge"
+            description="Combine multiple PDF documents into a single organized file in your desired order."
             category="pdf"
+            badge="Essential"
           >
             <PdfMergeView />
           </ToolLayout>
         }
       />
       <Route
-  path="/tools/pdf-merge"
+        path="/tools/pdf-split"
+        element={
+          <ToolLayout
+            title="PDF Splitter"
+            description="Extract specific pages or custom page ranges from any PDF document locally in your browser."
+            category="pdf"
+            badge="Fast"
+          >
+            <PdfSplitView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/image-to-pdf"
+        element={
+          <ToolLayout
+            title="Images to PDF"
+            description="Combine photos, scans, and graphic files into a single print-ready PDF document."
+            category="pdf"
+            badge="Popular"
+          >
+            <ImageToPdfView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/pdf-to-image"
+        element={
+          <ToolLayout
+            title="PDF to JPG/PNG"
+            description="Extract and convert PDF pages into high-resolution images locally in your browser."
+            category="pdf"
+          >
+            <PdfToImageView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/pdf-rotate"
+        element={
+          <ToolLayout
+            title="Rotate PDF"
+            description="Rotate specific pages or entire PDF documents clockwise or counter-clockwise permanently."
+            category="pdf"
+          >
+            <PdfRotateView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/rotate-pdf"
+        element={
+          <ToolLayout
+            title="Rotate PDF"
+            description="Rotate specific pages or entire PDF documents clockwise or counter-clockwise permanently."
+            category="pdf"
+          >
+            <PdfRotateView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/pdf-organize"
+        element={
+          <ToolLayout
+            title="Organize PDF"
+            description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
+            category="pdf"
+            badge="New"
+          >
+            <PdfOrganizeView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/organize-pdf"
+        element={
+          <ToolLayout
+            title="Organize PDF"
+            description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
+            category="pdf"
+            badge="New"
+          >
+            <PdfOrganizeView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/pdf-watermark"
+        element={
+          <ToolLayout
+            title="PDF Watermark Studio"
+            description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
+            category="pdf"
+            badge="New"
+          >
+            <PdfWatermarkView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/watermark-pdf"
+        element={
+          <ToolLayout
+            title="PDF Watermark Studio"
+            description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
+            category="pdf"
+            badge="New"
+          >
+            <PdfWatermarkView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/pdf-protect"
+        element={
+          <ToolLayout
+            title="Protect PDF"
+            description="Encrypt PDF documents with passwords and customize printing and copying permissions."
+            category="pdf"
+            badge="New"
+          >
+            <PdfProtectView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/protect-pdf"
+        element={
+          <ToolLayout
+            title="Protect PDF"
+            description="Encrypt PDF documents with passwords and customize printing and copying permissions."
+            category="pdf"
+            badge="New"
+          >
+            <PdfProtectView />
+          </ToolLayout>
+        }
+      />
+      <Route
+  path="/tools/video-trimmer"
   element={
     <ToolLayout
-      title="PDF Merge"
-      description="Combine multiple PDF documents into a single organized file in your desired order."
-      category="pdf"
-      badge="Essential"
+      title="Video Trimmer & Cutter"
+      description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
+      category="video"
+      badge="New"
     >
-      <PdfMergeView />
+      <VideoTrimmerView />
     </ToolLayout>
   }
 />
-
 <Route
-  path="/tools/pdf-split"
+  path="/tools/trim-video"
   element={
     <ToolLayout
-      title="PDF Splitter"
-      description="Extract specific pages or custom page ranges from any PDF document locally in your browser."
-      category="pdf"
-      badge="Fast"
+      title="Video Trimmer & Cutter"
+      description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
+      category="video"
+      badge="New"
     >
-      <PdfSplitView />
+      <VideoTrimmerView />
     </ToolLayout>
   }
 />
-
 <Route
-  path="/tools/image-to-pdf"
+  path="/tools/video-compressor"
   element={
     <ToolLayout
-      title="Images to PDF"
-      description="Combine photos, scans, and graphic files into a single print-ready PDF document."
-      category="pdf"
+      title="Video Compressor"
+      description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
+      category="video"
       badge="Popular"
     >
-      <ImageToPdfView />
+      <VideoCompressorView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/compress-video"
+  element={
+    <ToolLayout
+      title="Video Compressor"
+      description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
+      category="video"
+      badge="Popular"
+    >
+      <VideoCompressorView />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/video-to-mp3"
+  element={
+    <ToolLayout
+      title="Video to Audio (MP3 / WAV)"
+      description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
+      category="video"
+      badge="Popular"
+    >
+      <VideoToMp3View />
+    </ToolLayout>
+  }
+/>
+<Route
+  path="/tools/video-to-audio"
+  element={
+    <ToolLayout
+      title="Video to Audio (MP3 / WAV)"
+      description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
+      category="video"
+      badge="Popular"
+    >
+      <VideoToMp3View />
     </ToolLayout>
   }
 />
 
 <Route
-  path="/tools/pdf-to-image"
+  path="/tools/video-to-gif"
   element={
     <ToolLayout
-      title="PDF to JPG/PNG"
-      description="Extract and convert PDF pages into high-resolution images locally in your browser."
-      category="pdf"
-    >
-      <PdfToImageView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/photo-editor"
-  element={
-    <ToolLayout
-      title="Photo Studio Editor"
-      description="Enhance lighting, fine-tune colors, rotate, flip, and export high-resolution photos directly in your browser."
-      category="image"
+      title="Video to GIF Converter"
+      description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
+      category="video"
       badge="New"
     >
-      <PhotoEditorView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/pdf-rotate"
-  element={
-    <ToolLayout
-      title="Rotate PDF"
-      description="Rotate specific pages or entire PDF documents clockwise or counter-clockwise permanently."
-      category="pdf"
-    >
-      <PdfRotateView />
+      <VideoToGifView />
     </ToolLayout>
   }
 />
 <Route
-  path="/tools/pdf-organize"
+  path="/tools/video-gif"
   element={
     <ToolLayout
-      title="Organize PDF"
-      description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
-      category="pdf"
+      title="Video to GIF Converter"
+      description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
+      category="video"
       badge="New"
     >
-      <PdfOrganizeView />
+      <VideoToGifView />
     </ToolLayout>
   }
 />
-<Route
-  path="/tools/organize-pdf"
-  element={
-    <ToolLayout
-      title="Organize PDF"
-      description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
-      category="pdf"
-      badge="New"
-    >
-      <PdfOrganizeView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/pdf-watermark"
-  element={
-    <ToolLayout
-      title="PDF Watermark Studio"
-      description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
-      category="pdf"
-      badge="New"
-    >
-      <PdfWatermarkView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/watermark-pdf"
-  element={
-    <ToolLayout
-      title="PDF Watermark Studio"
-      description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
-      category="pdf"
-      badge="New"
-    >
-      <PdfWatermarkView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/bg-remover"
-  element={
-    <ToolLayout
-      title="Background Remover"
-      description="Erase photo backgrounds with automatic color detection, edge smoothing, and instant transparent PNG export."
-      category="image"
-      badge="New"
-    >
-      <BgRemoverView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/remove-bg"
-  element={
-    <ToolLayout
-      title="Background Remover"
-      description="Erase photo backgrounds with automatic color detection, edge smoothing, and instant transparent PNG export."
-      category="image"
-      badge="New"
-    >
-      <BgRemoverView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/pdf-protect"
-  element={
-    <ToolLayout
-      title="Protect PDF"
-      description="Encrypt PDF documents with passwords and customize printing and copying permissions."
-      category="pdf"
-      badge="New"
-    >
-      <PdfProtectView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/protect-pdf"
-  element={
-    <ToolLayout
-      title="Protect PDF"
-      description="Encrypt PDF documents with passwords and customize printing and copying permissions."
-      category="pdf"
-      badge="New"
-    >
-      <PdfProtectView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/social-resizer"
-  element={
-    <ToolLayout
-      title="Social Media Resizer"
-      description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
-      category="image"
-      badge="New"
-    >
-      <SocialResizerView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/image-resizer"
-  element={
-    <ToolLayout
-      title="Social Media Resizer"
-      description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
-      category="image"
-      badge="New"
-    >
-      <SocialResizerView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/image-censor"
-  element={
-    <ToolLayout
-      title="Image Censor & Privacy Redactor"
-      description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
-      category="image"
-      badge="New"
-    >
-      <ImageCensorView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/censor-image"
-  element={
-    <ToolLayout
-      title="Image Censor & Privacy Redactor"
-      description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
-      category="image"
-      badge="New"
-    >
-      <ImageCensorView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/palette-extractor"
-  element={
-    <ToolLayout
-      title="Color Palette Extractor"
-      description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
-      category="image"
-      badge="New"
-    >
-      <PaletteExtractorView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/color-palette"
-  element={
-    <ToolLayout
-      title="Color Palette Extractor"
-      description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
-      category="image"
-      badge="New"
-    >
-      <PaletteExtractorView />
-    </ToolLayout>
-  }
-/>
-
-<Route
-  path="/tools/exif-stripper"
-  element={
-    <ToolLayout
-      title="EXIF & Metadata Stripper"
-      description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
-      category="image"
-      badge="New"
-    >
-      <ExifStripperView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/remove-exif"
-  element={
-    <ToolLayout
-      title="EXIF & Metadata Stripper"
-      description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
-      category="image"
-      badge="New"
-    >
-      <ExifStripperView />
-    </ToolLayout>
-  }
-/>
-
     </Routes>
-    
   );
 }
