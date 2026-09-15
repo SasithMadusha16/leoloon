@@ -1,4 +1,3 @@
-// src/components/Footer.tsx
 import { Link } from 'react-router-dom';
 import { 
   ShieldCheck, 
@@ -273,15 +272,16 @@ export const Footer = () => {
         </div>
       </div>
 
-     {/* Bottom Legal, Crafted Note & Back to Top Strip */}
+      {/* Bottom Legal, Crafted Note & Back to Top Strip */}
       <div className="border-t border-slate-200/80 dark:border-slate-800/80 py-6 bg-slate-100/50 dark:bg-slate-950/60 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-5 text-xs">
           
-          <div className="flex flex-wrap items-center gap-2 text-center sm:text-left">
+          {/* Left: Copyright, Advora Credit & Tagline */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 text-slate-500 dark:text-slate-400">
             <span className="font-semibold text-slate-800 dark:text-slate-200">
               © 2026 Leoloon.
             </span>
-            <span className="text-slate-400 dark:text-slate-600">•</span>
+            <span className="text-slate-300 dark:text-slate-700">•</span>
             
             <span>
               Engineered by{' '}
@@ -289,26 +289,45 @@ export const Footer = () => {
                 href="https://www.advora.lk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-extrabold bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500 bg-clip-text text-transparent hover:brightness-125 transition-all duration-300 underline decoration-amber-500/30 hover:decoration-amber-500 underline-offset-4"
+                className="font-bold bg-gradient-to-r from-amber-500 via-amber-400 to-orange-500 bg-clip-text text-transparent hover:brightness-125 transition-all underline decoration-amber-500/30 hover:decoration-amber-500 underline-offset-4"
               >
                 Advora
               </a>
             </span>
 
-            <span className="text-slate-400 dark:text-slate-600">•</span>
-            <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-medium">
+            <span className="hidden lg:inline text-slate-300 dark:text-slate-700">•</span>
+            <span className="hidden lg:inline-flex items-center gap-1.5 text-slate-400 dark:text-slate-500">
               <Sparkles className="w-3.5 h-3.5 text-amber-500" />
               Private by design. Instant by nature.
             </span>
           </div>
 
-          <button
-            onClick={scrollToTop}
-            className="group flex items-center gap-2 px-4 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 dark:hover:border-amber-500/50 hover:bg-slate-50 dark:hover:bg-slate-800/80 shadow-xs hover:shadow-md transition-all font-semibold text-slate-700 dark:text-slate-200"
-          >
-            <span>Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5 text-amber-500 group-hover:-translate-y-0.5 transition-transform" />
-          </button>
+          {/* Right: Privacy, Terms & Back to Top */}
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 text-[11px] sm:text-xs font-medium text-slate-500 dark:text-slate-400">
+              <Link 
+                to="/privacy" 
+                className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors hover:underline underline-offset-4 decoration-amber-500/40"
+              >
+                Privacy Policy
+              </Link>
+              <span className="text-slate-300 dark:text-slate-700">•</span>
+              <Link 
+                to="/terms" 
+                className="hover:text-amber-500 dark:hover:text-amber-400 transition-colors hover:underline underline-offset-4 decoration-amber-500/40"
+              >
+                Terms of Service
+              </Link>
+            </div>
+
+            <button
+              onClick={scrollToTop}
+              className="group flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 dark:hover:border-amber-500/50 hover:bg-slate-50 dark:hover:bg-slate-850 shadow-xs hover:shadow-md transition-all font-semibold text-slate-700 dark:text-slate-200 text-xs"
+            >
+              <span>Back to top</span>
+              <ArrowUp className="w-3.5 h-3.5 text-amber-500 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </div>
 
         </div>
       </div>

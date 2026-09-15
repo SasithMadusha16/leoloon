@@ -51,6 +51,8 @@ import { JsonFormatterView } from './tools/developer/json-formatter/JsonFormatte
 import { Base64View } from './tools/developer/base64/Base64View';
 import { PasswordGeneratorView } from './tools/utility/password-generator/PasswordGeneratorView';
 import { Footer } from './components/Footer';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { TermsOfService } from './pages/TermsOfService';
 
 function HomeDashboard() {
   const [selectedCategory, setSelectedCategory] = useState<ToolCategory | 'all'>('all');
@@ -934,6 +936,8 @@ export default function App() {
           </ToolLayout>
         }
       />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+  <Route path="/terms" element={<TermsOfService />} />
     </Routes>
     
   );
