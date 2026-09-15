@@ -1,4 +1,3 @@
-// src/tools/pdf/image-to-pdf/ImageToPdfView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

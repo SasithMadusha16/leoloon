@@ -1,4 +1,3 @@
-// src/tools/image/social-resizer/SocialResizerView.tsx
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { 
   UploadCloud, 

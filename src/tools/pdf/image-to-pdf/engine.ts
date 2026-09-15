@@ -1,4 +1,3 @@
-// src/tools/pdf/image-to-pdf/engine.ts
 import { PDFDocument, PageSizes } from 'pdf-lib';
 
 export type PageOrientation = 'portrait' | 'landscape' | 'fit';

@@ -1,4 +1,3 @@
-// src/tools/pdf/watermark/engine.ts
 import { PDFDocument, rgb, degrees, StandardFonts } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
 

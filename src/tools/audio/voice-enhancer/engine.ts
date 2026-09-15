@@ -1,5 +1,3 @@
-// src/tools/audio/voice-enhancer/engine.ts
-
 export type EnhancerPresetId = 'podcast' | 'crisp' | 'warm' | 'de-noise';
 
 export interface EnhancerSettings {

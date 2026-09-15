@@ -1,4 +1,3 @@
-// src/tools/video/to-gif/VideoToGifView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

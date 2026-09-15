@@ -1,4 +1,3 @@
-// src/tools/image/censor/ImageCensorView.tsx
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { 
   UploadCloud, 

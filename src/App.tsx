@@ -51,6 +51,7 @@ import { JsonFormatterView } from './tools/developer/json-formatter/JsonFormatte
 import { Base64View } from './tools/developer/base64/Base64View';
 import { PasswordGeneratorView } from './tools/utility/password-generator/PasswordGeneratorView';
 import { Footer } from './components/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 function HomeDashboard() {
   const [selectedCategory, setSelectedCategory] = useState<ToolCategory | 'all'>('all');
@@ -934,6 +935,8 @@ export default function App() {
           </ToolLayout>
         }
       />
+      <Analytics />
     </Routes>
+    
   );
 }

@@ -1,4 +1,3 @@
-// src/tools/image/bg-remover/engine.ts
 import { removeBackground } from '@imgly/background-removal';
 
 export interface ProgressState {

@@ -1,4 +1,3 @@
-// src/tools/text/diff/TextDiffView.tsx
 import { useState, useMemo } from 'react';
 import { 
   GitCompare, 

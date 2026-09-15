@@ -1,4 +1,3 @@
-// src/tools/image/editor/PhotoEditorView.tsx
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { 
   UploadCloud, 

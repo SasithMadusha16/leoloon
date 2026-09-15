@@ -1,4 +1,3 @@
-// src/tools/utility/password-generator/PasswordGeneratorView.tsx
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import { 
   Key, 

@@ -1,4 +1,3 @@
-// src/tools/pdf/organize/engine.ts
 import { PDFDocument } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
 

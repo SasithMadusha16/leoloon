@@ -1,5 +1,3 @@
-// src/tools/text/markdown-preview/engine.ts
-
 export interface DocumentStats {
   words: number;
   chars: number;

@@ -1,4 +1,3 @@
-// src/tools/video/mute/MuteVideoView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

@@ -1,5 +1,3 @@
-// src/tools/video/compressor/engine.ts
-
 export type CompressionLevel = 'light' | 'balanced' | 'aggressive';
 export type TargetResolution = 'original' | '1080p' | '720p' | '480p' | '360p';
 

@@ -1,4 +1,3 @@
-// src/tools/image/palette-extractor/PaletteExtractorView.tsx
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { 
   UploadCloud, 

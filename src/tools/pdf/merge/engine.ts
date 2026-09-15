@@ -1,4 +1,3 @@
-// src/tools/pdf/merge/engine.ts
 import { PDFDocument } from 'pdf-lib';
 
 export interface PDFFileInfo {

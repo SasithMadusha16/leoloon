@@ -1,4 +1,3 @@
-// src/tools/qr/studio/QrStudioView.tsx
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { 
   QrCode, 

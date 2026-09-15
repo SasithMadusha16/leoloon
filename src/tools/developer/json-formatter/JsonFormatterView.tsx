@@ -1,4 +1,3 @@
-// src/tools/developer/json-formatter/JsonFormatterView.tsx
 import { useState, useMemo, useRef } from 'react';
 import { 
   Braces, 

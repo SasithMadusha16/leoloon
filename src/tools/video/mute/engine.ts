@@ -1,5 +1,3 @@
-// src/tools/video/mute/engine.ts
-
 export interface MuteProgress {
   percent: number;
   currentTime: number;

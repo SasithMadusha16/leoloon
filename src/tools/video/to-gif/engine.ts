@@ -1,4 +1,3 @@
-// src/tools/video/to-gif/engine.ts
 import { GIFEncoder, quantize, applyPalette } from 'gifenc';
 
 export interface GifOptions {

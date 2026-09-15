@@ -1,4 +1,3 @@
-// src/tools/text/case-converter/CaseConverterView.tsx
 import { useState } from 'react';
 import { 
   Type, 

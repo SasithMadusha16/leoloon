@@ -1,5 +1,3 @@
-// src/tools/text/word-counter/engine.ts
-
 export interface TextStats {
   words: number;
   chars: number;

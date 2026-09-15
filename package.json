@@ -12,6 +12,7 @@
   "dependencies": {
     "@imgly/background-removal": "^1.7.0",
     "@types/qrcode": "^1.5.6",
+    "@vercel/analytics": "^2.0.1",
     "clsx": "^2.1.1",
     "gifenc": "^1.0.3",
     "jspdf": "^4.2.1",
@@ -22,6 +23,7 @@
     "qrcode": "^1.5.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.18.3",
     "tailwind-merge": "^3.6.0"
   },

@@ -1,4 +1,3 @@
-// src/tools/text/lorem-generator/LoremGeneratorView.tsx
 import { useState, useMemo } from 'react';
 import { 
   AlignLeft, 

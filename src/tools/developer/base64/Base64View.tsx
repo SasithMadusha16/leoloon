@@ -1,4 +1,3 @@
-// src/tools/developer/base64/Base64View.tsx
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { 
   Binary, 

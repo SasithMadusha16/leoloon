@@ -1,5 +1,3 @@
-// src/tools/video/to-mp3/engine.ts
-
 export interface AudioExtractOptions {
   sampleRate: 44100 | 48000;
   channels: 1 | 2; // 1 = Mono, 2 = Stereo

@@ -1,4 +1,3 @@
-// src/tools/image/exif-stripper/ExifStripperView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

@@ -1,5 +1,3 @@
-// src/tools/image/editor/engine.ts
-
 export interface EditorSettings {
   brightness: number; // 0 - 200, default 100
   contrast: number;   // 0 - 200, default 100

@@ -1,4 +1,3 @@
-// src/tools/pdf/rotate/engine.ts
 import { PDFDocument, degrees } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
 

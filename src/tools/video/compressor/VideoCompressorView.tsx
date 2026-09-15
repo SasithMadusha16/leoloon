@@ -1,4 +1,3 @@
-// src/tools/video/compressor/VideoCompressorView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

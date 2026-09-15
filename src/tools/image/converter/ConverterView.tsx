@@ -1,4 +1,3 @@
-// src/tools/image/converter/ConverterView.tsx
 import { useState, useRef } from 'react';
 import { UploadCloud, Download, RefreshCw, ArrowRight, CheckCircle2, Image as ImageIcon } from 'lucide-react';
 import { convertImageFormat, formatBytes } from './engine';

@@ -1,5 +1,3 @@
-// src/tools/image/converter/engine.ts
-
 export type SupportedFormat = 'image/jpeg' | 'image/png' | 'image/webp';
 
 export interface ConversionResult {

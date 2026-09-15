@@ -1,5 +1,3 @@
-// src/tools/image/censor/engine.ts
-
 export type CensorMode = 'pixelate' | 'blur' | 'blackout';
 
 export interface CensorBox {

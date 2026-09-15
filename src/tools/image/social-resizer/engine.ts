@@ -1,5 +1,3 @@
-// src/tools/image/social-resizer/engine.ts
-
 export interface SocialPreset {
   id: string;
   platform: 'Instagram' | 'YouTube' | 'TikTok' | 'Twitter' | 'Facebook' | 'LinkedIn';

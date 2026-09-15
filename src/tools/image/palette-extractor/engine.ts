@@ -1,5 +1,3 @@
-// src/tools/image/palette-extractor/engine.ts
-
 export interface ColorSwatch {
   hex: string;
   rgb: { r: number; g: number; b: number };

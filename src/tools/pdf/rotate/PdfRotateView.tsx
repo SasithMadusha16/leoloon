@@ -1,4 +1,3 @@
-// src/tools/pdf/rotate/PdfRotateView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

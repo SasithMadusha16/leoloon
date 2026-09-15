@@ -1,4 +1,3 @@
-// src/tools/pdf/watermark/PdfWatermarkView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

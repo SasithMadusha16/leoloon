@@ -1,4 +1,3 @@
-// src/tools/pdf/split/PdfSplitView.tsx
 import { useState, useRef, useEffect, useMemo } from 'react';
 import { 
   UploadCloud, 

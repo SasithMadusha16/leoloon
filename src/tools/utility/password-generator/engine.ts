@@ -1,5 +1,3 @@
-// src/tools/utility/password-generator/engine.ts
-
 export type PasswordMode = 'random' | 'passphrase' | 'pin';
 
 export interface RandomPasswordOptions {

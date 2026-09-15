@@ -1,4 +1,3 @@
-// src/tools/text/word-counter/WordCounterView.tsx
 import { useState, useMemo } from 'react';
 import { 
   FileText, 

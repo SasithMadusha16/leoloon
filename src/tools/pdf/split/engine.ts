@@ -1,4 +1,3 @@
-// src/tools/pdf/split/engine.ts
 import { PDFDocument } from 'pdf-lib';
 
 export interface PDFSplitResult {

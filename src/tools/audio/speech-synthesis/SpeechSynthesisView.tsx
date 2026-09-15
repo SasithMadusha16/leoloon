@@ -1,4 +1,3 @@
-// src/tools/audio/speech-synthesis/SpeechSynthesisView.tsx
 import { useState, useEffect, useRef } from 'react';
 import { 
   Volume2, 

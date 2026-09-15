@@ -1,4 +1,3 @@
-// src/tools/text/markdown-preview/MarkdownPreviewView.tsx
 import { useState, useMemo, useRef } from 'react';
 import { 
   FileText, 

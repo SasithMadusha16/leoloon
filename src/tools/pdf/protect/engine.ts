@@ -1,4 +1,3 @@
-// src/tools/pdf/protect/engine.ts
 import { jsPDF } from 'jspdf';
 import * as pdfjsLib from 'pdfjs-dist';
 

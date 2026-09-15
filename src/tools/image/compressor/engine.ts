@@ -1,5 +1,3 @@
-// src/tools/image/compressor/engine.ts
-
 export interface CompressionResult {
   blob: Blob;
   previewUrl: string;

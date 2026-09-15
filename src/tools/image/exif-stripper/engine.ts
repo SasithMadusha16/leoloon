@@ -1,5 +1,3 @@
-// src/tools/image/exif-stripper/engine.ts
-
 export interface DetectedMetadata {
   hasExif: boolean;
   cameraMake?: string;

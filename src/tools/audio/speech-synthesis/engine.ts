@@ -1,5 +1,3 @@
-// src/tools/audio/speech-synthesis/engine.ts
-
 export type SpeechPresetId = 'natural' | 'fast' | 'calm' | 'animated';
 
 export interface SpeechSettings {

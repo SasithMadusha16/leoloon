@@ -1,4 +1,3 @@
-// src/tools/qr/studio/engine.ts
 import QRCode from 'qrcode';
 
 export type QrDataType = 'url' | 'wifi' | 'vcard' | 'whatsapp' | 'crypto' | 'email' | 'sms' | 'text';

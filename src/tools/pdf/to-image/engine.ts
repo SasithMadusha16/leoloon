@@ -1,4 +1,3 @@
-// src/tools/pdf/to-image/engine.ts
 import * as pdfjsLib from 'pdfjs-dist';
 import JSZip from 'jszip';
 

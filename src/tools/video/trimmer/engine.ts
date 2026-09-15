@@ -1,5 +1,3 @@
-// src/tools/video/trimmer/engine.ts
-
 export interface TrimProgress {
   percent: number;
   currentTime: number;

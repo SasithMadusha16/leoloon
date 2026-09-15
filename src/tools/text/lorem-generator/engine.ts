@@ -1,5 +1,3 @@
-// src/tools/text/lorem-generator/engine.ts
-
 export type GeneratorUnit = 'paragraphs' | 'sentences' | 'words' | 'lists';
 export type TextFlavor = 'classic' | 'tech';
 

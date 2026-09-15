@@ -1,4 +1,3 @@
-// src/tools/image/bg-remover/BgRemoverView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

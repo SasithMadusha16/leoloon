@@ -1,4 +1,3 @@
-// src/tools/pdf/protect/PdfProtectView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

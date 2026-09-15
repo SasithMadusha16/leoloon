@@ -1,5 +1,3 @@
-// src/tools/text/case-converter/engine.ts
-
 export type CaseFormat =
   | 'uppercase'
   | 'lowercase'

@@ -1,5 +1,3 @@
-// src/tools/text/diff/engine.ts
-
 export type DiffType = 'added' | 'removed' | 'unchanged';
 
 export interface DiffLine {

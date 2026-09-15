@@ -1,4 +1,3 @@
-// src/tools/pdf/organize/PdfOrganizeView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { 
   UploadCloud, 

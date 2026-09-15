@@ -1,4 +1,3 @@
-// src/tools/image/compressor/CompressorView.tsx
 import { useState, useRef, useEffect } from 'react';
 import { UploadCloud, Download, RefreshCw, Sparkles } from 'lucide-react';
 import { compressImage, formatBytes, type CompressionResult } from './engine';

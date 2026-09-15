@@ -1,5 +1,3 @@
-// src/tools/developer/json-formatter/engine.ts
-
 export interface JsonStats {
   sizeBytes: number;
   keysCount: number;
