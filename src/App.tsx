@@ -53,6 +53,7 @@ import { PasswordGeneratorView } from './tools/utility/password-generator/Passwo
 import { Footer } from './components/Footer';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { TermsOfService } from './pages/TermsOfService';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function HomeDashboard() {
   const [selectedCategory, setSelectedCategory] = useState<ToolCategory | 'all'>('all');
@@ -186,759 +187,762 @@ function HomeDashboard() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomeDashboard />} />
-      
-      <Route
-        path="/tools/image-compressor"
-        element={
-          <ToolLayout
-            title="Image Compressor"
-            description="Compress PNG, JPG, and WebP images locally with live quality tuning and real-time size reduction stats."
-            category="image"
-            badge="Popular"
-          >
-            <CompressorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/image-converter"
-        element={
-          <ToolLayout
-            title="Format Converter"
-            description="Convert images instantly between JPG, PNG, and next-gen WebP formats on your device."
-            category="image"
-          >
-            <ConverterView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/photo-editor"
-        element={
-          <ToolLayout
-            title="Photo Studio Editor"
-            description="Enhance lighting, fine-tune colors, rotate, flip, and export high-resolution photos directly in your browser."
-            category="image"
-            badge="New"
-          >
-            <PhotoEditorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/bg-remover"
-        element={
-          <ToolLayout
-            title="Background Remover"
-            description="Erase photo backgrounds with neural AI segmentation, edge smoothing, and instant transparent PNG export."
-            category="image"
-            badge="New"
-          >
-            <BgRemoverView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/remove-bg"
-        element={
-          <ToolLayout
-            title="Background Remover"
-            description="Erase photo backgrounds with neural AI segmentation, edge smoothing, and instant transparent PNG export."
-            category="image"
-            badge="New"
-          >
-            <BgRemoverView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/social-resizer"
-        element={
-          <ToolLayout
-            title="Social Media Resizer"
-            description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
-            category="image"
-            badge="New"
-          >
-            <SocialResizerView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/image-resizer"
-        element={
-          <ToolLayout
-            title="Social Media Resizer"
-            description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
-            category="image"
-            badge="New"
-          >
-            <SocialResizerView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/image-censor"
-        element={
-          <ToolLayout
-            title="Image Censor & Privacy Redactor"
-            description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
-            category="image"
-            badge="New"
-          >
-            <ImageCensorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/censor-image"
-        element={
-          <ToolLayout
-            title="Image Censor & Privacy Redactor"
-            description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
-            category="image"
-            badge="New"
-          >
-            <ImageCensorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/palette-extractor"
-        element={
-          <ToolLayout
-            title="Color Palette Extractor"
-            description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
-            category="image"
-            badge="New"
-          >
-            <PaletteExtractorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/color-palette"
-        element={
-          <ToolLayout
-            title="Color Palette Extractor"
-            description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
-            category="image"
-            badge="New"
-          >
-            <PaletteExtractorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/exif-stripper"
-        element={
-          <ToolLayout
-            title="EXIF & Metadata Stripper"
-            description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
-            category="image"
-            badge="New"
-          >
-            <ExifStripperView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/remove-exif"
-        element={
-          <ToolLayout
-            title="EXIF & Metadata Stripper"
-            description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
-            category="image"
-            badge="New"
-          >
-            <ExifStripperView />
-          </ToolLayout>
-        }
-      />
+    <>
+      <ScrollToTop />
 
-      <Route
-        path="/tools/pdf-merge"
-        element={
-          <ToolLayout
-            title="PDF Merge"
-            description="Combine multiple PDF documents into a single organized file in your desired order."
-            category="pdf"
-            badge="Essential"
-          >
-            <PdfMergeView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/pdf-split"
-        element={
-          <ToolLayout
-            title="PDF Splitter"
-            description="Extract specific pages or custom page ranges from any PDF document locally in your browser."
-            category="pdf"
-            badge="Fast"
-          >
-            <PdfSplitView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/image-to-pdf"
-        element={
-          <ToolLayout
-            title="Images to PDF"
-            description="Combine photos, scans, and graphic files into a single print-ready PDF document."
-            category="pdf"
-            badge="Popular"
-          >
-            <ImageToPdfView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/pdf-to-image"
-        element={
-          <ToolLayout
-            title="PDF to JPG/PNG"
-            description="Extract and convert PDF pages into high-resolution images locally in your browser."
-            category="pdf"
-          >
-            <PdfToImageView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/pdf-rotate"
-        element={
-          <ToolLayout
-            title="Rotate PDF"
-            description="Rotate specific pages or entire PDF documents clockwise or counter-clockwise permanently."
-            category="pdf"
-          >
-            <PdfRotateView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/rotate-pdf"
-        element={
-          <ToolLayout
-            title="Rotate PDF"
-            description="Rotate specific pages or entire PDF documents clockwise or counter-clockwise permanently."
-            category="pdf"
-          >
-            <PdfRotateView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/pdf-organize"
-        element={
-          <ToolLayout
-            title="Organize PDF"
-            description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
-            category="pdf"
-            badge="New"
-          >
-            <PdfOrganizeView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/organize-pdf"
-        element={
-          <ToolLayout
-            title="Organize PDF"
-            description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
-            category="pdf"
-            badge="New"
-          >
-            <PdfOrganizeView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/pdf-watermark"
-        element={
-          <ToolLayout
-            title="PDF Watermark Studio"
-            description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
-            category="pdf"
-            badge="New"
-          >
-            <PdfWatermarkView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/watermark-pdf"
-        element={
-          <ToolLayout
-            title="PDF Watermark Studio"
-            description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
-            category="pdf"
-            badge="New"
-          >
-            <PdfWatermarkView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/pdf-protect"
-        element={
-          <ToolLayout
-            title="Protect PDF"
-            description="Encrypt PDF documents with passwords and customize printing and copying permissions."
-            category="pdf"
-            badge="New"
-          >
-            <PdfProtectView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/protect-pdf"
-        element={
-          <ToolLayout
-            title="Protect PDF"
-            description="Encrypt PDF documents with passwords and customize printing and copying permissions."
-            category="pdf"
-            badge="New"
-          >
-            <PdfProtectView />
-          </ToolLayout>
-        }
-      />
+      <Routes>
+        <Route path="/" element={<HomeDashboard />} />
+        
+        <Route
+          path="/tools/image-compressor"
+          element={
+            <ToolLayout
+              title="Image Compressor"
+              description="Compress PNG, JPG, and WebP images locally with live quality tuning and real-time size reduction stats."
+              category="image"
+              badge="Popular"
+            >
+              <CompressorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/image-converter"
+          element={
+            <ToolLayout
+              title="Format Converter"
+              description="Convert images instantly between JPG, PNG, and next-gen WebP formats on your device."
+              category="image"
+            >
+              <ConverterView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/photo-editor"
+          element={
+            <ToolLayout
+              title="Photo Studio Editor"
+              description="Enhance lighting, fine-tune colors, rotate, flip, and export high-resolution photos directly in your browser."
+              category="image"
+              badge="New"
+            >
+              <PhotoEditorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/bg-remover"
+          element={
+            <ToolLayout
+              title="Background Remover"
+              description="Erase photo backgrounds with neural AI segmentation, edge smoothing, and instant transparent PNG export."
+              category="image"
+              badge="New"
+            >
+              <BgRemoverView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/remove-bg"
+          element={
+            <ToolLayout
+              title="Background Remover"
+              description="Erase photo backgrounds with neural AI segmentation, edge smoothing, and instant transparent PNG export."
+              category="image"
+              badge="New"
+            >
+              <BgRemoverView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/social-resizer"
+          element={
+            <ToolLayout
+              title="Social Media Resizer"
+              description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
+              category="image"
+              badge="New"
+            >
+              <SocialResizerView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/image-resizer"
+          element={
+            <ToolLayout
+              title="Social Media Resizer"
+              description="Auto-resize, frame, and crop images to exact dimensions for Instagram, YouTube, TikTok, Twitter, and LinkedIn."
+              category="image"
+              badge="New"
+            >
+              <SocialResizerView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/image-censor"
+          element={
+            <ToolLayout
+              title="Image Censor & Privacy Redactor"
+              description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
+              category="image"
+              badge="New"
+            >
+              <ImageCensorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/censor-image"
+          element={
+            <ToolLayout
+              title="Image Censor & Privacy Redactor"
+              description="Drag to pixelate, blur, or blackout faces, license plates, and sensitive credentials with zero server uploads."
+              category="image"
+              badge="New"
+            >
+              <ImageCensorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/palette-extractor"
+          element={
+            <ToolLayout
+              title="Color Palette Extractor"
+              description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
+              category="image"
+              badge="New"
+            >
+              <PaletteExtractorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/color-palette"
+          element={
+            <ToolLayout
+              title="Color Palette Extractor"
+              description="Extract dominant colors from any image with K-Means clustering, luminance checking, and instant code export."
+              category="image"
+              badge="New"
+            >
+              <PaletteExtractorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/exif-stripper"
+          element={
+            <ToolLayout
+              title="EXIF & Metadata Stripper"
+              description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
+              category="image"
+              badge="New"
+            >
+              <ExifStripperView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/remove-exif"
+          element={
+            <ToolLayout
+              title="EXIF & Metadata Stripper"
+              description="Inspect and permanently erase GPS location tags, camera models, and private timestamps from photos."
+              category="image"
+              badge="New"
+            >
+              <ExifStripperView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/video-trimmer"
-        element={
-          <ToolLayout
-            title="Video Trimmer & Cutter"
-            description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
-            category="video"
-            badge="New"
-          >
-            <VideoTrimmerView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/trim-video"
-        element={
-          <ToolLayout
-            title="Video Trimmer & Cutter"
-            description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
-            category="video"
-            badge="New"
-          >
-            <VideoTrimmerView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/video-compressor"
-        element={
-          <ToolLayout
-            title="Video Compressor"
-            description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
-            category="video"
-            badge="Popular"
-          >
-            <VideoCompressorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/compress-video"
-        element={
-          <ToolLayout
-            title="Video Compressor"
-            description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
-            category="video"
-            badge="Popular"
-          >
-            <VideoCompressorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/video-to-mp3"
-        element={
-          <ToolLayout
-            title="Video to Audio (MP3 / WAV)"
-            description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
-            category="video"
-            badge="Popular"
-          >
-            <VideoToMp3View />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/video-to-audio"
-        element={
-          <ToolLayout
-            title="Video to Audio (MP3 / WAV)"
-            description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
-            category="video"
-            badge="Popular"
-          >
-            <VideoToMp3View />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/pdf-merge"
+          element={
+            <ToolLayout
+              title="PDF Merge"
+              description="Combine multiple PDF documents into a single organized file in your desired order."
+              category="pdf"
+              badge="Essential"
+            >
+              <PdfMergeView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/pdf-split"
+          element={
+            <ToolLayout
+              title="PDF Splitter"
+              description="Extract specific pages or custom page ranges from any PDF document locally in your browser."
+              category="pdf"
+              badge="Fast"
+            >
+              <PdfSplitView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/image-to-pdf"
+          element={
+            <ToolLayout
+              title="Images to PDF"
+              description="Combine photos, scans, and graphic files into a single print-ready PDF document."
+              category="pdf"
+              badge="Popular"
+            >
+              <ImageToPdfView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/pdf-to-image"
+          element={
+            <ToolLayout
+              title="PDF to JPG/PNG"
+              description="Extract and convert PDF pages into high-resolution images locally in your browser."
+              category="pdf"
+            >
+              <PdfToImageView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/pdf-rotate"
+          element={
+            <ToolLayout
+              title="Rotate PDF"
+              description="Rotate specific pages or entire PDF documents clockwise or counter-clockwise permanently."
+              category="pdf"
+            >
+              <PdfRotateView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/rotate-pdf"
+          element={
+            <ToolLayout
+              title="Rotate PDF"
+              description="Rotate specific pages or entire PDF documents clockwise or counter-clockwise permanently."
+              category="pdf"
+            >
+              <PdfRotateView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/pdf-organize"
+          element={
+            <ToolLayout
+              title="Organize PDF"
+              description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
+              category="pdf"
+              badge="New"
+            >
+              <PdfOrganizeView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/organize-pdf"
+          element={
+            <ToolLayout
+              title="Organize PDF"
+              description="Rearrange page order, swap pages, and delete unwanted pages visually with live previews."
+              category="pdf"
+              badge="New"
+            >
+              <PdfOrganizeView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/pdf-watermark"
+          element={
+            <ToolLayout
+              title="PDF Watermark Studio"
+              description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
+              category="pdf"
+              badge="New"
+            >
+              <PdfWatermarkView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/watermark-pdf"
+          element={
+            <ToolLayout
+              title="PDF Watermark Studio"
+              description="Protect documents by stamping text watermarks with live real-time position and opacity preview."
+              category="pdf"
+              badge="New"
+            >
+              <PdfWatermarkView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/pdf-protect"
+          element={
+            <ToolLayout
+              title="Protect PDF"
+              description="Encrypt PDF documents with passwords and customize printing and copying permissions."
+              category="pdf"
+              badge="New"
+            >
+              <PdfProtectView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/protect-pdf"
+          element={
+            <ToolLayout
+              title="Protect PDF"
+              description="Encrypt PDF documents with passwords and customize printing and copying permissions."
+              category="pdf"
+              badge="New"
+            >
+              <PdfProtectView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/video-to-gif"
-        element={
-          <ToolLayout
-            title="Video to GIF Converter"
-            description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
-            category="video"
-            badge="New"
-          >
-            <VideoToGifView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/video-gif"
-        element={
-          <ToolLayout
-            title="Video to GIF Converter"
-            description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
-            category="video"
-            badge="New"
-          >
-            <VideoToGifView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/video-trimmer"
+          element={
+            <ToolLayout
+              title="Video Trimmer & Cutter"
+              description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
+              category="video"
+              badge="New"
+            >
+              <VideoTrimmerView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/trim-video"
+          element={
+            <ToolLayout
+              title="Video Trimmer & Cutter"
+              description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
+              category="video"
+              badge="New"
+            >
+              <VideoTrimmerView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/video-compressor"
+          element={
+            <ToolLayout
+              title="Video Compressor"
+              description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
+              category="video"
+              badge="Popular"
+            >
+              <VideoCompressorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/compress-video"
+          element={
+            <ToolLayout
+              title="Video Compressor"
+              description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
+              category="video"
+              badge="Popular"
+            >
+              <VideoCompressorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/video-to-mp3"
+          element={
+            <ToolLayout
+              title="Video to Audio (MP3 / WAV)"
+              description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
+              category="video"
+              badge="Popular"
+            >
+              <VideoToMp3View />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/video-to-audio"
+          element={
+            <ToolLayout
+              title="Video to Audio (MP3 / WAV)"
+              description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
+              category="video"
+              badge="Popular"
+            >
+              <VideoToMp3View />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/mute-video"
-        element={
-          <ToolLayout
-            title="Mute Video"
-            description="Permanently remove audio tracks from videos and export silent clips with zero quality loss."
-            category="video"
-            badge="New"
-          >
-            <MuteVideoView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/remove-audio"
-        element={
-          <ToolLayout
-            title="Mute Video"
-            description="Permanently remove audio tracks from videos and export silent clips with zero quality loss."
-            category="video"
-            badge="New"
-          >
-            <MuteVideoView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/video-to-gif"
+          element={
+            <ToolLayout
+              title="Video to GIF Converter"
+              description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
+              category="video"
+              badge="New"
+            >
+              <VideoToGifView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/video-gif"
+          element={
+            <ToolLayout
+              title="Video to GIF Converter"
+              description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
+              category="video"
+              badge="New"
+            >
+              <VideoToGifView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/voice-enhancer"
-        element={
-          <ToolLayout
-            title="AI Voice Enhancer & Master"
-            description="Clean microphone rumble, boost speech clarity, level audio dynamics, and remove room noise 100% client-side."
-            category="audio"
-            badge="New"
-          >
-            <VoiceEnhancerView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/audio-enhancer"
-        element={
-          <ToolLayout
-            title="AI Voice Enhancer & Master"
-            description="Clean microphone rumble, boost speech clarity, level audio dynamics, and remove room noise 100% client-side."
-            category="audio"
-            badge="New"
-          >
-            <VoiceEnhancerView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/speech-synthesis"
-        element={
-          <ToolLayout
-            title="Speech Synthesis (Text to Speech)"
-            description="Synthesize natural voice audio from text client-side with native device voices, speed modulation, and custom pitch."
-            category="audio"
-            badge="New"
-          >
-            <SpeechSynthesisView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/text-to-speech"
-        element={
-          <ToolLayout
-            title="Speech Synthesis (Text to Speech)"
-            description="Synthesize natural voice audio from text client-side with native device voices, speed modulation, and custom pitch."
-            category="audio"
-            badge="New"
-          >
-            <SpeechSynthesisView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/mute-video"
+          element={
+            <ToolLayout
+              title="Mute Video"
+              description="Permanently remove audio tracks from videos and export silent clips with zero quality loss."
+              category="video"
+              badge="New"
+            >
+              <MuteVideoView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/remove-audio"
+          element={
+            <ToolLayout
+              title="Mute Video"
+              description="Permanently remove audio tracks from videos and export silent clips with zero quality loss."
+              category="video"
+              badge="New"
+            >
+              <MuteVideoView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/text-diff"
-        element={
-          <ToolLayout
-            title="Text & Code Diff Checker"
-            description="Compare two texts, documents, or code files with side-by-side highlighting, line numbers, and similarity stats."
-            category="text"
-            badge="New"
-          >
-            <TextDiffView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/diff-checker"
-        element={
-          <ToolLayout
-            title="Text & Code Diff Checker"
-            description="Compare two texts, documents, or code files with side-by-side highlighting, line numbers, and similarity stats."
-            category="text"
-            badge="New"
-          >
-            <TextDiffView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/voice-enhancer"
+          element={
+            <ToolLayout
+              title="AI Voice Enhancer & Master"
+              description="Clean microphone rumble, boost speech clarity, level audio dynamics, and remove room noise 100% client-side."
+              category="audio"
+              badge="New"
+            >
+              <VoiceEnhancerView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/audio-enhancer"
+          element={
+            <ToolLayout
+              title="AI Voice Enhancer & Master"
+              description="Clean microphone rumble, boost speech clarity, level audio dynamics, and remove room noise 100% client-side."
+              category="audio"
+              badge="New"
+            >
+              <VoiceEnhancerView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/speech-synthesis"
+          element={
+            <ToolLayout
+              title="Speech Synthesis (Text to Speech)"
+              description="Synthesize natural voice audio from text client-side with native device voices, speed modulation, and custom pitch."
+              category="audio"
+              badge="New"
+            >
+              <SpeechSynthesisView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/text-to-speech"
+          element={
+            <ToolLayout
+              title="Speech Synthesis (Text to Speech)"
+              description="Synthesize natural voice audio from text client-side with native device voices, speed modulation, and custom pitch."
+              category="audio"
+              badge="New"
+            >
+              <SpeechSynthesisView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/word-counter"
-        element={
-          <ToolLayout
-            title="Word & Character Counter"
-            description="Analyze text length, sentence counts, reading times, keyword density, and social media character limits."
-            category="text"
-            badge="Popular"
-          >
-            <WordCounterView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/character-counter"
-        element={
-          <ToolLayout
-            title="Word & Character Counter"
-            description="Analyze text length, sentence counts, reading times, keyword density, and social media character limits."
-            category="text"
-            badge="Popular"
-          >
-            <WordCounterView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/text-diff"
+          element={
+            <ToolLayout
+              title="Text & Code Diff Checker"
+              description="Compare two texts, documents, or code files with side-by-side highlighting, line numbers, and similarity stats."
+              category="text"
+              badge="New"
+            >
+              <TextDiffView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/diff-checker"
+          element={
+            <ToolLayout
+              title="Text & Code Diff Checker"
+              description="Compare two texts, documents, or code files with side-by-side highlighting, line numbers, and similarity stats."
+              category="text"
+              badge="New"
+            >
+              <TextDiffView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/case-converter"
-        element={
-          <ToolLayout
-            title="Text Case Converter"
-            description="Convert text between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, and kebab-case instantly."
-            category="text"
-            badge="New"
-          >
-            <CaseConverterView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/text-case-converter"
-        element={
-          <ToolLayout
-            title="Text Case Converter"
-            description="Convert text between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, and kebab-case instantly."
-            category="text"
-            badge="New"
-          >
-            <CaseConverterView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/word-counter"
+          element={
+            <ToolLayout
+              title="Word & Character Counter"
+              description="Analyze text length, sentence counts, reading times, keyword density, and social media character limits."
+              category="text"
+              badge="Popular"
+            >
+              <WordCounterView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/character-counter"
+          element={
+            <ToolLayout
+              title="Word & Character Counter"
+              description="Analyze text length, sentence counts, reading times, keyword density, and social media character limits."
+              category="text"
+              badge="Popular"
+            >
+              <WordCounterView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/markdown-preview"
-        element={
-          <ToolLayout
-            title="Markdown Live Preview"
-            description="Write, preview, and format GitHub Flavored Markdown in real-time with standalone HTML and MD exports."
-            category="text"
-            badge="New"
-          >
-            <MarkdownPreviewView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/markdown-editor"
-        element={
-          <ToolLayout
-            title="Markdown Live Preview"
-            description="Write, preview, and format GitHub Flavored Markdown in real-time with standalone HTML and MD exports."
-            category="text"
-            badge="New"
-          >
-            <MarkdownPreviewView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/case-converter"
+          element={
+            <ToolLayout
+              title="Text Case Converter"
+              description="Convert text between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, and kebab-case instantly."
+              category="text"
+              badge="New"
+            >
+              <CaseConverterView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/text-case-converter"
+          element={
+            <ToolLayout
+              title="Text Case Converter"
+              description="Convert text between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, and kebab-case instantly."
+              category="text"
+              badge="New"
+            >
+              <CaseConverterView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/lorem-generator"
-        element={
-          <ToolLayout
-            title="Lorem Ipsum Generator"
-            description="Generate customizable placeholder and dummy text by paragraphs, words, sentences, or HTML lists."
-            category="text"
-            badge="New"
-          >
-            <LoremGeneratorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/lorem-ipsum"
-        element={
-          <ToolLayout
-            title="Lorem Ipsum Generator"
-            description="Generate customizable placeholder and dummy text by paragraphs, words, sentences, or HTML lists."
-            category="text"
-            badge="New"
-          >
-            <LoremGeneratorView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/markdown-preview"
+          element={
+            <ToolLayout
+              title="Markdown Live Preview"
+              description="Write, preview, and format GitHub Flavored Markdown in real-time with standalone HTML and MD exports."
+              category="text"
+              badge="New"
+            >
+              <MarkdownPreviewView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/markdown-editor"
+          element={
+            <ToolLayout
+              title="Markdown Live Preview"
+              description="Write, preview, and format GitHub Flavored Markdown in real-time with standalone HTML and MD exports."
+              category="text"
+              badge="New"
+            >
+              <MarkdownPreviewView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/qr-studio"
-        element={
-          <ToolLayout
-            title="Professional QR Studio"
-            description="Design high-precision QR codes with WiFi auto-connect, vCard, custom eyes, gradients, logo embedding, and 4K vector exports."
-            category="utility"
-          >
-            <QrStudioView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/qr-code-generator"
-        element={
-          <ToolLayout
-            title="Professional QR Studio"
-            description="Design high-precision QR codes with WiFi auto-connect, vCard, custom eyes, gradients, logo embedding, and 4K vector exports."
-            category="utility"
-          >
-            <QrStudioView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/lorem-generator"
+          element={
+            <ToolLayout
+              title="Lorem Ipsum Generator"
+              description="Generate customizable placeholder and dummy text by paragraphs, words, sentences, or HTML lists."
+              category="text"
+              badge="New"
+            >
+              <LoremGeneratorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/lorem-ipsum"
+          element={
+            <ToolLayout
+              title="Lorem Ipsum Generator"
+              description="Generate customizable placeholder and dummy text by paragraphs, words, sentences, or HTML lists."
+              category="text"
+              badge="New"
+            >
+              <LoremGeneratorView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/json-formatter"
-        element={
-          <ToolLayout
-            title="JSON Formatter & Studio"
-            description="Beautify, minify, validate, auto-repair JSON, and convert to TypeScript interfaces or CSV client-side."
-            category="developer"
-            badge="New"
-          >
-            <JsonFormatterView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/json-validator"
-        element={
-          <ToolLayout
-            title="JSON Formatter & Studio"
-            description="Beautify, minify, validate, auto-repair JSON, and convert to TypeScript interfaces or CSV client-side."
-            category="developer"
-            badge="New"
-          >
-            <JsonFormatterView />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/qr-studio"
+          element={
+            <ToolLayout
+              title="Professional QR Studio"
+              description="Design high-precision QR codes with WiFi auto-connect, vCard, custom eyes, gradients, logo embedding, and 4K vector exports."
+              category="utility"
+            >
+              <QrStudioView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/qr-code-generator"
+          element={
+            <ToolLayout
+              title="Professional QR Studio"
+              description="Design high-precision QR codes with WiFi auto-connect, vCard, custom eyes, gradients, logo embedding, and 4K vector exports."
+              category="utility"
+            >
+              <QrStudioView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/base64"
-        element={
-          <ToolLayout
-            title="Base64 Studio & Media Encoder"
-            description="Encode and decode text, images, and files to Base64 with UTF-8 support, URL-safe mode, and HTML snippets."
-            category="developer"
-            badge="New"
-          >
-            <Base64View />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/base64-converter"
-        element={
-          <ToolLayout
-            title="Base64 Studio & Media Encoder"
-            description="Encode and decode text, images, and files to Base64 with UTF-8 support, URL-safe mode, and HTML snippets."
-            category="developer"
-            badge="New"
-          >
-            <Base64View />
-          </ToolLayout>
-        }
-      />
+        <Route
+          path="/tools/json-formatter"
+          element={
+            <ToolLayout
+              title="JSON Formatter & Studio"
+              description="Beautify, minify, validate, auto-repair JSON, and convert to TypeScript interfaces or CSV client-side."
+              category="developer"
+              badge="New"
+            >
+              <JsonFormatterView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/json-validator"
+          element={
+            <ToolLayout
+              title="JSON Formatter & Studio"
+              description="Beautify, minify, validate, auto-repair JSON, and convert to TypeScript interfaces or CSV client-side."
+              category="developer"
+              badge="New"
+            >
+              <JsonFormatterView />
+            </ToolLayout>
+          }
+        />
 
-      <Route
-        path="/tools/password-generator"
-        element={
-          <ToolLayout
-            title="CSPRNG Password Studio"
-            description="Generate cryptographically secure passwords, memorable Diceware passphrases, and PINs with real-time entropy calculation."
-            category="utility"
-          >
-            <PasswordGeneratorView />
-          </ToolLayout>
-        }
-      />
-      <Route
-        path="/tools/password"
-        element={
-          <ToolLayout
-            title="CSPRNG Password Studio"
-            description="Generate cryptographically secure passwords, memorable Diceware passphrases, and PINs with real-time entropy calculation."
-            category="utility"
-          >
-            <PasswordGeneratorView />
-          </ToolLayout>
-        }
-      />
-      <Route path="/privacy" element={<PrivacyPolicy />} />
-  <Route path="/terms" element={<TermsOfService />} />
-    </Routes>
-    
+        <Route
+          path="/tools/base64"
+          element={
+            <ToolLayout
+              title="Base64 Studio & Media Encoder"
+              description="Encode and decode text, images, and files to Base64 with UTF-8 support, URL-safe mode, and HTML snippets."
+              category="developer"
+              badge="New"
+            >
+              <Base64View />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/base64-converter"
+          element={
+            <ToolLayout
+              title="Base64 Studio & Media Encoder"
+              description="Encode and decode text, images, and files to Base64 with UTF-8 support, URL-safe mode, and HTML snippets."
+              category="developer"
+              badge="New"
+            >
+              <Base64View />
+            </ToolLayout>
+          }
+        />
+
+        <Route
+          path="/tools/password-generator"
+          element={
+            <ToolLayout
+              title="CSPRNG Password Studio"
+              description="Generate cryptographically secure passwords, memorable Diceware passphrases, and PINs with real-time entropy calculation."
+              category="utility"
+            >
+              <PasswordGeneratorView />
+            </ToolLayout>
+          }
+        />
+        <Route
+          path="/tools/password"
+          element={
+            <ToolLayout
+              title="CSPRNG Password Studio"
+              description="Generate cryptographically secure passwords, memorable Diceware passphrases, and PINs with real-time entropy calculation."
+              category="utility"
+            >
+              <PasswordGeneratorView />
+            </ToolLayout>
+          }
+        />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfService />} />
+      </Routes>
+    </>
   );
 }
