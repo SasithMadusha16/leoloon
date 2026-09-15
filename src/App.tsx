@@ -1,4 +1,3 @@
-// src/App.tsx
 import { useState, useMemo } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { 
@@ -39,13 +38,24 @@ import { VideoTrimmerView } from './tools/video/trimmer/VideoTrimmerView';
 import { VideoCompressorView } from './tools/video/compressor/VideoCompressorView';
 import { VideoToMp3View } from './tools/video/to-mp3/VideoToMp3View';
 import { VideoToGifView } from './tools/video/to-gif/VideoToGifView';
+import { MuteVideoView } from './tools/video/mute/MuteVideoView';
+import { VoiceEnhancerView } from './tools/audio/voice-enhancer/VoiceEnhancerView';
+import { SpeechSynthesisView } from './tools/audio/speech-synthesis/SpeechSynthesisView';
+import { TextDiffView } from './tools/text/diff/TextDiffView';
+import { WordCounterView } from './tools/text/word-counter/WordCounterView';
+import { CaseConverterView } from './tools/text/case-converter/CaseConverterView';
+import { MarkdownPreviewView } from './tools/text/markdown-preview/MarkdownPreviewView';
+import { LoremGeneratorView } from './tools/text/lorem-generator/LoremGeneratorView';
+import { QrStudioView } from './tools/qr/studio/QrStudioView';
+import { JsonFormatterView } from './tools/developer/json-formatter/JsonFormatterView';
+import { Base64View } from './tools/developer/base64/Base64View';
+import { PasswordGeneratorView } from './tools/utility/password-generator/PasswordGeneratorView';
+import { Footer } from './components/Footer';
 
-// Home Dashboard View with All 6 Category Tabs
 function HomeDashboard() {
   const [selectedCategory, setSelectedCategory] = useState<ToolCategory | 'all'>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // 6 Categories + All Filter
   const categories = [
     { id: 'all', label: 'All Utilities', icon: Layers },
     { id: 'pdf', label: 'PDF Documents', icon: FileText },
@@ -71,8 +81,6 @@ function HomeDashboard() {
       <Navbar />
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        
-        {/* HERO HEADER */}
         <section className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-50 dark:bg-sky-950/60 border border-sky-500/20 text-sky-600 dark:text-sky-400 text-xs font-semibold mb-5 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" /> 100% Client-Side • Files Never Leave Your Device
@@ -89,7 +97,6 @@ function HomeDashboard() {
             Process images, edit PDFs, clean metadata, and run developer tools entirely inside your browser. No cloud uploads. Instant execution.
           </p>
 
-          {/* SEARCH BAR */}
           <div className="relative max-w-md mx-auto">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
             <input
@@ -102,7 +109,6 @@ function HomeDashboard() {
           </div>
         </section>
 
-        {/* ALL CATEGORY TABS (SCROLLABLE ON MOBILE) */}
         <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
           {categories.map((cat) => {
             const Icon = cat.icon;
@@ -124,7 +130,6 @@ function HomeDashboard() {
           })}
         </div>
 
-        {/* TOOLS GRID */}
         {filteredTools.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filteredTools.map((tool) => (
@@ -139,7 +144,6 @@ function HomeDashboard() {
           </div>
         )}
 
-        {/* PRIVACY STRIP */}
         <section className="mt-20 border-t border-slate-200 dark:border-slate-800 pt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
           <div className="flex flex-col items-center">
             <div className="w-9 h-9 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 text-emerald-500 flex items-center justify-center mb-2">
@@ -173,20 +177,16 @@ function HomeDashboard() {
         </section>
       </main>
 
-      <footer className="border-t border-slate-200 dark:border-slate-800 py-6 bg-white dark:bg-slate-950 text-center text-xs text-slate-500 dark:text-slate-400 transition-colors">
-        <p>© 2026 Leoloon. Engineered by Advora. 100% Client-Side Processing.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
 
-// Global App Routing
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomeDashboard />} />
       
-      {/* IMAGE TOOLS */}
       <Route
         path="/tools/image-compressor"
         element={
@@ -356,7 +356,6 @@ export default function App() {
         }
       />
 
-      {/* PDF TOOLS */}
       <Route
         path="/tools/pdf-merge"
         element={
@@ -510,111 +509,431 @@ export default function App() {
           </ToolLayout>
         }
       />
-      <Route
-  path="/tools/video-trimmer"
-  element={
-    <ToolLayout
-      title="Video Trimmer & Cutter"
-      description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
-      category="video"
-      badge="New"
-    >
-      <VideoTrimmerView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/trim-video"
-  element={
-    <ToolLayout
-      title="Video Trimmer & Cutter"
-      description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
-      category="video"
-      badge="New"
-    >
-      <VideoTrimmerView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/video-compressor"
-  element={
-    <ToolLayout
-      title="Video Compressor"
-      description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
-      category="video"
-      badge="Popular"
-    >
-      <VideoCompressorView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/compress-video"
-  element={
-    <ToolLayout
-      title="Video Compressor"
-      description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
-      category="video"
-      badge="Popular"
-    >
-      <VideoCompressorView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/video-to-mp3"
-  element={
-    <ToolLayout
-      title="Video to Audio (MP3 / WAV)"
-      description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
-      category="video"
-      badge="Popular"
-    >
-      <VideoToMp3View />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/video-to-audio"
-  element={
-    <ToolLayout
-      title="Video to Audio (MP3 / WAV)"
-      description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
-      category="video"
-      badge="Popular"
-    >
-      <VideoToMp3View />
-    </ToolLayout>
-  }
-/>
 
-<Route
-  path="/tools/video-to-gif"
-  element={
-    <ToolLayout
-      title="Video to GIF Converter"
-      description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
-      category="video"
-      badge="New"
-    >
-      <VideoToGifView />
-    </ToolLayout>
-  }
-/>
-<Route
-  path="/tools/video-gif"
-  element={
-    <ToolLayout
-      title="Video to GIF Converter"
-      description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
-      category="video"
-      badge="New"
-    >
-      <VideoToGifView />
-    </ToolLayout>
-  }
-/>
+      <Route
+        path="/tools/video-trimmer"
+        element={
+          <ToolLayout
+            title="Video Trimmer & Cutter"
+            description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
+            category="video"
+            badge="New"
+          >
+            <VideoTrimmerView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/trim-video"
+        element={
+          <ToolLayout
+            title="Video Trimmer & Cutter"
+            description="Cut, trim, and clip MP4, WebM, and MOV videos locally in your browser with millisecond precision."
+            category="video"
+            badge="New"
+          >
+            <VideoTrimmerView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/video-compressor"
+        element={
+          <ToolLayout
+            title="Video Compressor"
+            description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
+            category="video"
+            badge="Popular"
+          >
+            <VideoCompressorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/compress-video"
+        element={
+          <ToolLayout
+            title="Video Compressor"
+            description="Reduce video file sizes by up to 70% with intelligent client-side bitrate and resolution downscaling."
+            category="video"
+            badge="Popular"
+          >
+            <VideoCompressorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/video-to-mp3"
+        element={
+          <ToolLayout
+            title="Video to Audio (MP3 / WAV)"
+            description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
+            category="video"
+            badge="Popular"
+          >
+            <VideoToMp3View />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/video-to-audio"
+        element={
+          <ToolLayout
+            title="Video to Audio (MP3 / WAV)"
+            description="Extract studio-grade lossless soundtrack audio from MP4, WebM, MOV, and MKV clips in seconds."
+            category="video"
+            badge="Popular"
+          >
+            <VideoToMp3View />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/video-to-gif"
+        element={
+          <ToolLayout
+            title="Video to GIF Converter"
+            description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
+            category="video"
+            badge="New"
+          >
+            <VideoToGifView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/video-gif"
+        element={
+          <ToolLayout
+            title="Video to GIF Converter"
+            description="Convert MP4, WebM, and MOV videos into looping animated GIFs client-side with custom frame rates and dimensions."
+            category="video"
+            badge="New"
+          >
+            <VideoToGifView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/mute-video"
+        element={
+          <ToolLayout
+            title="Mute Video"
+            description="Permanently remove audio tracks from videos and export silent clips with zero quality loss."
+            category="video"
+            badge="New"
+          >
+            <MuteVideoView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/remove-audio"
+        element={
+          <ToolLayout
+            title="Mute Video"
+            description="Permanently remove audio tracks from videos and export silent clips with zero quality loss."
+            category="video"
+            badge="New"
+          >
+            <MuteVideoView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/voice-enhancer"
+        element={
+          <ToolLayout
+            title="AI Voice Enhancer & Master"
+            description="Clean microphone rumble, boost speech clarity, level audio dynamics, and remove room noise 100% client-side."
+            category="audio"
+            badge="New"
+          >
+            <VoiceEnhancerView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/audio-enhancer"
+        element={
+          <ToolLayout
+            title="AI Voice Enhancer & Master"
+            description="Clean microphone rumble, boost speech clarity, level audio dynamics, and remove room noise 100% client-side."
+            category="audio"
+            badge="New"
+          >
+            <VoiceEnhancerView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/speech-synthesis"
+        element={
+          <ToolLayout
+            title="Speech Synthesis (Text to Speech)"
+            description="Synthesize natural voice audio from text client-side with native device voices, speed modulation, and custom pitch."
+            category="audio"
+            badge="New"
+          >
+            <SpeechSynthesisView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/text-to-speech"
+        element={
+          <ToolLayout
+            title="Speech Synthesis (Text to Speech)"
+            description="Synthesize natural voice audio from text client-side with native device voices, speed modulation, and custom pitch."
+            category="audio"
+            badge="New"
+          >
+            <SpeechSynthesisView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/text-diff"
+        element={
+          <ToolLayout
+            title="Text & Code Diff Checker"
+            description="Compare two texts, documents, or code files with side-by-side highlighting, line numbers, and similarity stats."
+            category="text"
+            badge="New"
+          >
+            <TextDiffView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/diff-checker"
+        element={
+          <ToolLayout
+            title="Text & Code Diff Checker"
+            description="Compare two texts, documents, or code files with side-by-side highlighting, line numbers, and similarity stats."
+            category="text"
+            badge="New"
+          >
+            <TextDiffView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/word-counter"
+        element={
+          <ToolLayout
+            title="Word & Character Counter"
+            description="Analyze text length, sentence counts, reading times, keyword density, and social media character limits."
+            category="text"
+            badge="Popular"
+          >
+            <WordCounterView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/character-counter"
+        element={
+          <ToolLayout
+            title="Word & Character Counter"
+            description="Analyze text length, sentence counts, reading times, keyword density, and social media character limits."
+            category="text"
+            badge="Popular"
+          >
+            <WordCounterView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/case-converter"
+        element={
+          <ToolLayout
+            title="Text Case Converter"
+            description="Convert text between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, and kebab-case instantly."
+            category="text"
+            badge="New"
+          >
+            <CaseConverterView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/text-case-converter"
+        element={
+          <ToolLayout
+            title="Text Case Converter"
+            description="Convert text between UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, and kebab-case instantly."
+            category="text"
+            badge="New"
+          >
+            <CaseConverterView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/markdown-preview"
+        element={
+          <ToolLayout
+            title="Markdown Live Preview"
+            description="Write, preview, and format GitHub Flavored Markdown in real-time with standalone HTML and MD exports."
+            category="text"
+            badge="New"
+          >
+            <MarkdownPreviewView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/markdown-editor"
+        element={
+          <ToolLayout
+            title="Markdown Live Preview"
+            description="Write, preview, and format GitHub Flavored Markdown in real-time with standalone HTML and MD exports."
+            category="text"
+            badge="New"
+          >
+            <MarkdownPreviewView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/lorem-generator"
+        element={
+          <ToolLayout
+            title="Lorem Ipsum Generator"
+            description="Generate customizable placeholder and dummy text by paragraphs, words, sentences, or HTML lists."
+            category="text"
+            badge="New"
+          >
+            <LoremGeneratorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/lorem-ipsum"
+        element={
+          <ToolLayout
+            title="Lorem Ipsum Generator"
+            description="Generate customizable placeholder and dummy text by paragraphs, words, sentences, or HTML lists."
+            category="text"
+            badge="New"
+          >
+            <LoremGeneratorView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/qr-studio"
+        element={
+          <ToolLayout
+            title="Professional QR Studio"
+            description="Design high-precision QR codes with WiFi auto-connect, vCard, custom eyes, gradients, logo embedding, and 4K vector exports."
+            category="utility"
+          >
+            <QrStudioView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/qr-code-generator"
+        element={
+          <ToolLayout
+            title="Professional QR Studio"
+            description="Design high-precision QR codes with WiFi auto-connect, vCard, custom eyes, gradients, logo embedding, and 4K vector exports."
+            category="utility"
+          >
+            <QrStudioView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/json-formatter"
+        element={
+          <ToolLayout
+            title="JSON Formatter & Studio"
+            description="Beautify, minify, validate, auto-repair JSON, and convert to TypeScript interfaces or CSV client-side."
+            category="developer"
+            badge="New"
+          >
+            <JsonFormatterView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/json-validator"
+        element={
+          <ToolLayout
+            title="JSON Formatter & Studio"
+            description="Beautify, minify, validate, auto-repair JSON, and convert to TypeScript interfaces or CSV client-side."
+            category="developer"
+            badge="New"
+          >
+            <JsonFormatterView />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/base64"
+        element={
+          <ToolLayout
+            title="Base64 Studio & Media Encoder"
+            description="Encode and decode text, images, and files to Base64 with UTF-8 support, URL-safe mode, and HTML snippets."
+            category="developer"
+            badge="New"
+          >
+            <Base64View />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/base64-converter"
+        element={
+          <ToolLayout
+            title="Base64 Studio & Media Encoder"
+            description="Encode and decode text, images, and files to Base64 with UTF-8 support, URL-safe mode, and HTML snippets."
+            category="developer"
+            badge="New"
+          >
+            <Base64View />
+          </ToolLayout>
+        }
+      />
+
+      <Route
+        path="/tools/password-generator"
+        element={
+          <ToolLayout
+            title="CSPRNG Password Studio"
+            description="Generate cryptographically secure passwords, memorable Diceware passphrases, and PINs with real-time entropy calculation."
+            category="utility"
+          >
+            <PasswordGeneratorView />
+          </ToolLayout>
+        }
+      />
+      <Route
+        path="/tools/password"
+        element={
+          <ToolLayout
+            title="CSPRNG Password Studio"
+            description="Generate cryptographically secure passwords, memorable Diceware passphrases, and PINs with real-time entropy calculation."
+            category="utility"
+          >
+            <PasswordGeneratorView />
+          </ToolLayout>
+        }
+      />
     </Routes>
   );
 }

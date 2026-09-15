@@ -1,5 +1,3 @@
-// src/data/tools.ts
-
 export type ToolCategory = 'pdf' | 'image' | 'video' | 'audio' | 'text' | 'dev';
 
 export interface Tool {
@@ -14,7 +12,6 @@ export interface Tool {
 }
 
 export const TOOLS_DATA: Tool[] = [
- 
   {
     id: 'pdf-merge',
     name: 'PDF Merge',
@@ -83,10 +80,6 @@ export const TOOLS_DATA: Tool[] = [
     path: '/tools/pdf-protect',
     badge: 'Security',
   },
-
-  // ==========================================
-  // 2. IMAGE & AI STUDIO (8 Tools)
-  // ==========================================
   {
     id: 'image-compressor',
     name: 'Image Compressor',
@@ -158,10 +151,6 @@ export const TOOLS_DATA: Tool[] = [
     icon: 'ShieldAlert',
     path: '/tools/exif-stripper',
   },
-
-  // ==========================================
-  // 3. VIDEO LAB (5 Tools - Client-Side)
-  // ==========================================
   {
     id: 'video-trimmer',
     name: 'Video Trimmer & Cutter',
@@ -204,10 +193,6 @@ export const TOOLS_DATA: Tool[] = [
     icon: 'VolumeX',
     path: '/tools/mute-video',
   },
-
-  // ==========================================
-  // 4. VOICE & AUDIO STUDIO (2 Tools)
-  // ==========================================
   {
     id: 'voice-enhancer',
     name: 'Voice Noise Cleaner',
@@ -226,10 +211,6 @@ export const TOOLS_DATA: Tool[] = [
     icon: 'Volume2',
     path: '/tools/speech-synthesis',
   },
-
-  // ==========================================
-  // 5. TEXT & WRITING SUITE (5 Tools)
-  // ==========================================
   {
     id: 'text-diff',
     name: 'Text Diff Checker',
@@ -271,10 +252,6 @@ export const TOOLS_DATA: Tool[] = [
     icon: 'AlignLeft',
     path: '/tools/lorem-generator',
   },
-
-  // ==========================================
-  // 6. DEVELOPER & SECURITY HUB (4 Tools)
-  // ==========================================
   {
     id: 'qr-studio',
     name: 'QR Code Studio',
